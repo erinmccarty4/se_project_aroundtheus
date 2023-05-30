@@ -37,3 +37,6 @@ C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\MAIN PAGE.png
 C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\MOBILE.png
 
 C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\UI KIT.png
+<img width="1280" alt="MAIN PAGE" src="https://github.com/erinmccarty4/se_project_aroundtheus/assets/130415643/05f79316-bfff-4f3e-80ec-a3766d1cea57">
+![MOBILE](https://github.com/erinmccarty4/se_project_aroundtheus/assets/130415643/f0402f63-fed5-4432-87e0-a9e61dc7447d)
+![UI KIT](https://github.com/erinmccarty4/se_project_aroundtheus/assets/130415643/498c3c10-b742-47b3-8618-30c93419b8be)
