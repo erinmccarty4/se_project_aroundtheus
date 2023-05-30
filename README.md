@@ -1,21 +1,39 @@
 # Project 3: Around The U.S.
 
-### Overview  
+## Description of the project 
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
+This is the project of the Software Engineer program at Practicum by Yandex. It was created using HTML and CSS, based on the Figma design brief. This project is made with different interface for popular screen sizes. 
+
+## Technologies and techniques used 
+
+- Semantic HTML5 
+- Flexbox 
+- Positioning 
+- Flat BEM 
+- Responsive design 
+- CSS transform 
+- Grid layout 
+- Media Queries 
+- JavaScript 
+
+## Project features 
+
 **Figma**  
   
-* [Link to the project on Figma](https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?node-id=0%3A1)  
+* [Link to the project on Figma]https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?type=design&node-id=0-1&t=ropLyS9MJDcggOKi-0 
+
   
+**Visit the live site!**
+
+https://github.com/practicum-com/se_project_aroundtheus
+https://github.com/erinmccarty4/se_project_aroundtheus.git
+gh repo clone erinmccarty4/se_project_aroundtheus
+
+
 **Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+MAIN PAGE.png
+C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\MAIN PAGE.png
+
+C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\MOBILE.png
+
+C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\UI KIT.png
