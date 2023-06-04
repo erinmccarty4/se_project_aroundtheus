@@ -24,8 +24,6 @@ This is the project of the Software Engineer program at Practicum by Yandex. It 
 
   
 **Visit the live site!**
-
-https://github.com/practicum-com/se_project_aroundtheus
 https://github.com/erinmccarty4/se_project_aroundtheus.git
 gh repo clone erinmccarty4/se_project_aroundtheus
 
