@@ -1,38 +1,35 @@
 # Project 3: Around The U.S.
 
-## Description of the project 
+## Description of the project
 
-This is the project of the Software Engineer program at Practicum by Yandex. It was created using HTML and CSS, based on the Figma design brief. This project is made with different interface for popular screen sizes. 
+This is the project of the Software Engineer program at Practicum by Yandex. It was created using HTML and CSS, based on the Figma design brief. This project is made with different interface for popular screen sizes.
 
-## Technologies and techniques used 
+## Technologies and techniques used
 
-- Semantic HTML5 
-- Flexbox 
-- Positioning 
-- Flat BEM 
-- Responsive design 
-- CSS transform 
-- Grid layout 
-- Media Queries 
-- JavaScript 
+- Semantic HTML5
+- Flexbox
+- Positioning
+- Flat BEM
+- Responsive design
+- CSS transform
+- Grid layout
+- Media Queries
+- JavaScript
 
-## Project features 
+## Project features
 
-**Figma**  
-  
-* [Link to the project on Figma]https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?type=design&node-id=0-1&t=ropLyS9MJDcggOKi-0 
+**Figma**
 
-  
+https://www.figma.com/file/ii4xxsJ0ghevUOcssTlHZv/Sprint-3%3A-Around-the-US?type=design&node-id=0-1&t=ropLyS9MJDcggOKi-0
+
 **Visit the live site!**
-https://github.com/erinmccarty4/se_project_aroundtheus.git
-gh repo clone erinmccarty4/se_project_aroundtheus
 
+https://erinmccarty4.github.io/se_project_aroundtheus/
 
 **Images**  
-MAIN PAGE.png
-Main page
-Mobile
-UI Kit
-<img width="1280" alt="MAIN PAGE" src="https://github.com/erinmccarty4/se_project_aroundtheus/assets/130415643/05f79316-bfff-4f3e-80ec-a3766d1cea57">
-![MOBILE](https://github.com/erinmccarty4/se_project_aroundtheus/assets/130415643/f0402f63-fed5-4432-87e0-a9e61dc7447d)
-![UI KIT](https://github.com/erinmccarty4/se_project_aroundtheus/assets/130415643/498c3c10-b742-47b3-8618-30c93419b8be)
+
+C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\MAIN PAGE.png
+
+C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\MOBILE.png
+
+C:\Users\pawn\Desktop\SE_PROJECT_AROUNDTHEUS\UI KIT.png
