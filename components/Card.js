@@ -3,6 +3,7 @@ export default class Card {
       this._name = name;
       this._link = link;
       this._cardSelector = cardSelector;
+      this._openPreviewModal = openPreviewModal;
     }
   
     _setEventListeners() {
@@ -10,13 +11,14 @@ export default class Card {
       this._cardElement
         .querySelector(".card__like-button")
         .addEventListener("click", () => {
-          this._likeButton();
+          this._handlelikeButton();
         });
+
       //".card__delete-button"
       this._cardElement
         .querySelector(".card__delete-button")
         .addEventListener("click", () => {
-          this._deleteButton();
+          this._handledeleteButton();
         });
     }
   
