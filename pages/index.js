@@ -201,13 +201,7 @@ allModals.forEach((modal) => {
     }
   }
   
-  // function handleMouseClickModalClose(e) {
-  //   if (e.target.classList.contains("modal")) {
-  //     const modal = document.querySelector(".modal_opened");
-  //     closePopup(modal);
-  //     e.preventDefault();
-  //   }
-  // }
+
   
 /* -------------------------------------------------------------------------- */
 /*                                 Initializer                                */
