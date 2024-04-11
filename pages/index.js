@@ -1,4 +1,5 @@
 import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -160,12 +161,7 @@ function renderCard(cardData) {
 
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-  toggleButtonState(
-    [profileTitleInput, profileDescriptionInput],
-    profileEditForm.querySelector(config.submitButtonSelector),
-    config
-  );
+  profileDescriptionInput.value = profileDescription.textContent.trim();
   openModal(profileEditModal);
 });
 
