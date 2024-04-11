@@ -27,11 +27,6 @@ const initialCards = [
   },
 ];
 
-const cardData = {
-  name: "Yosemite Valley",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-};
-
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
@@ -71,19 +66,38 @@ const previewImageEl = document.querySelector(".card__preview-image");
 const previewNameEl = document.querySelector(".modal__preview-name");
 
 /* -------------------------------------------------------------------------- */
+/*                                  Objects                                */
+/* -------------------------------------------------------------------------- */
+const config = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+const editProfileFormValidator = new FormValidator(
+  config,
+  "#edit-profile-form"
+);
+editProfileFormValidator.enableValidation();
+
+const addCardFormValidator = new FormValidator(config, "#add-card-form");
+addCardFormValidator.enableValidation();
+
+/* -------------------------------------------------------------------------- */
 /*                                  Functions                                  */
 /* -------------------------------------------------------------------------- */
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", handleEsc);
-  document.removeEventListener("mousedown", handleImageClick);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEsc);
-  document.addEventListener("mousedown", handleImageClick);
 }
 
 // function getCardElement(cardData) {
@@ -119,11 +133,11 @@ function openModal(modal) {
 //     return cardElement;
 //     }
 
-function handleImageClick() {
+function handleImageClick(name, link) {
   openModal(previewImageModal);
-  previewNameEl.textContent = cardData.name;
-  previewImageEl.alt = cardData.name;
-  previewImageEl.src = cardData.link;
+  previewNameEl.textContent = name;
+  previewImageEl.alt = name;
+  previewImageEl.src = link;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -139,8 +153,18 @@ function handleProfileEditSubmit(evt) {
 
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
+
   const name = cardTitleForm.value;
   const link = cardLinkForm.value;
+
+  const cardData = { name, link };
+
+  const card = new Card(cardData, "#card-template", handleImageClick);
+  // call the getView method
+  const cardElement = card.getView();
+  // place card on the page
+  cardListEl.prepend(cardElement);
+
   addCardForm.reset();
   closePopup(profileAddCardModal);
 }
@@ -161,11 +185,6 @@ function renderCard(cardData) {
 profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  toggleButtonState(
-    [profileTitleInput, profileDescriptionInput],
-    profileEditForm.querySelector(config.submitButtonSelector),
-    config
-  );
   openModal(profileEditModal);
 });
 
