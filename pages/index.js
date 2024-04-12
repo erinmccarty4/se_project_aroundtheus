@@ -151,20 +151,21 @@ function handleProfileEditSubmit(evt) {
   closePopup(profileEditModal);
 }
 
+function createCard(cardData) {
+  const cardElement = new Card(cardData, "#card-template", handleImageClick);
+  return cardElement.getView();
+}
+
 function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
 
   const name = cardTitleForm.value;
   const link = cardLinkForm.value;
-
   const cardData = { name, link };
-
   const card = new Card(cardData, "#card-template", handleImageClick);
-  // call the getView method
   const cardElement = card.getView();
   // place card on the page
   cardListEl.prepend(cardElement);
-
   addCardForm.reset();
   closePopup(profileAddCardModal);
 }
@@ -230,10 +231,6 @@ function handleEsc(evt) {
 /* -------------------------------------------------------------------------- */
 
 initialCards.forEach((cardData) => {
-  // create an instance of the Card class
-  const card = new Card(cardData, "#card-template", handleImageClick);
-  // call the getView method
-  const cardElement = card.getView();
-  // place card on the page
+  const cardElement = createCard(cardData);
   cardListEl.append(cardElement);
 });

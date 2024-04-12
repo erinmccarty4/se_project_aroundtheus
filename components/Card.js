@@ -40,28 +40,20 @@ export default class Card {
     this._cardElement = null;
   }
 
-  _handleImageClick() {
-    this._cardElement.querySelector(".card__image");
-  }
-
   getView() {
     this._cardElement = document
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
       .cloneNode(true);
-    // select the card image
-    this._cardImage = this._cardElement.querySelector(".card__image");
-    // set the src to the link
-    this._cardImage.src = this._link;
-    // set the alt to the card name
-    this._cardImage.alt = this._name;
-    // select the card title
-    this._cardTitle = this._cardElement.querySelector(".card__title");
-    // and set the text content to the card name
-    this._cardTitle.textContent = this._name;
-    // set event listeners
+    this._cardImageEl = this._cardElement.querySelector(".card__image");
+    this._cardTitleEl = this._cardElement.querySelector(".card__title");
+    this._cardImageEl.src = this._link;
+    this._cardImageEl.alt = this._name;
+    this._cardTitleEl.textContent = this._name;
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._deleteButton = this._cardElement.querySelector(".delete__button");
+
     this._setEventListeners();
-    // return the card
     return this._cardElement;
   }
 }
