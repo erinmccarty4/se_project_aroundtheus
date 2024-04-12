@@ -1,6 +1,6 @@
 /* Validation */
 export default class FormValidator {
-  constructor(settings, formSelector) {
+  constructor(settings, formElement) {
     this._inputSelector = settings.inputSelector;
     this._submitButtonSelector = settings.submitButtonSelector;
     this._inactiveButtonClass = settings.inactiveButtonClass;
@@ -47,7 +47,7 @@ export default class FormValidator {
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
-      this.disableButton();
+      this._disableButton();
     } else {
       this._enableButton();
     }
@@ -61,7 +61,7 @@ export default class FormValidator {
     this._inputEls.forEach((inputEl) => {
       inputEl.addEventListener("input", (e) => {
         this._checkInputValidity(inputEl);
-        this.toggleButtonState();
+        this._toggleButtonState();
       });
     });
   }
@@ -69,10 +69,10 @@ export default class FormValidator {
   enableValidation() {
     this._form.addEventListener("submit", (e) => {
       e.preventDefault();
-      this.disableButton();
+      this._disableButton();
     });
     this._setEventListeners();
-    this.toggleButtonState();
+    this._toggleButtonState();
   }
 
   resetValidation() {
