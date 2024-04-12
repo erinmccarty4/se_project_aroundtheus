@@ -85,7 +85,6 @@ editProfileFormValidator.enableValidation();
 
 const addCardFormValidator = new FormValidator(config, "#add-card-form");
 addCardFormValidator.enableValidation();
-
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                  */
 /* -------------------------------------------------------------------------- */
