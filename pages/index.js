@@ -40,7 +40,7 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+const profileEdit = profileEditModal.querySelector(".modal__form");
 
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
@@ -79,12 +79,12 @@ const config = {
 const editProfileForm = document.querySelector("#edit-profile-form");
 const editProfileFormValidator = new FormValidator(config, editProfileForm);
 
-editProfileFormValidator.enableValidation(FormValidator);
+editProfileFormValidator.enableValidation();
 
 const addCardForm = document.querySelector("#add-card-form");
 const addCardFormValidator = new FormValidator(config, addCardForm);
 
-addCardFormValidator.enableValidation(FormValidator);
+addCardFormValidator.enableValidation();
 /* ------------------------------------------------------------------------ */
 /*                                  Functions                                  */
 /* -------------------------------------------------------------------------- */
@@ -154,7 +154,7 @@ profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+profileEdit.addEventListener("submit", handleProfileEditSubmit);
 closeEditButton.addEventListener("click", () => closePopup(profileEditModal));
 
 addNewCardButton.addEventListener("click", () => {
