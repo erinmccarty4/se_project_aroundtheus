@@ -40,7 +40,7 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const profileEdit = profileEditModal.querySelector(".modal__form");
+const profileEditForm = profileEditModal.querySelector(".modal__form");
 
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
@@ -76,15 +76,23 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
-const editProfileForm = document.querySelector("#edit-profile-form");
-const editProfileFormValidator = new FormValidator(config, editProfileForm);
+// const editProfileForm = document.querySelector("#edit-profile-form");
+// const editProfileFormValidator = new FormValidator(config, editProfileForm);
 
-editProfileFormValidator.enableValidation();
+// editProfileFormValidator.enableValidation(FormValidator);
 
 const addCardForm = document.querySelector("#add-card-form");
-const addCardFormValidator = new FormValidator(config, addCardForm);
+// const addCardFormValidator = new FormValidator(config, addCardForm);
 
-addCardFormValidator.enableValidation();
+// addCardFormValidator.enableValidation(FormValidator);
+
+const forms = document.querySelectorAll(config.formSelector);
+
+forms.forEach((form) => {
+  const formValidator = new FormValidator(config, form);
+  formValidator.enableValidation();
+});
+
 /* ------------------------------------------------------------------------ */
 /*                                  Functions                                  */
 /* -------------------------------------------------------------------------- */
