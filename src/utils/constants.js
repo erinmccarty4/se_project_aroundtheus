@@ -28,6 +28,7 @@ export const initialCards = [
 export const selectors = {
   popupForm: "modal__form",
   previewImage: "modal__preview-image",
+  addModal: "#profile-add-modal",
 };
 
 export const settings = {
@@ -44,8 +45,9 @@ export const cardSection = document.querySelector(".page__section");
 export const profileEditButton = document.querySelector(
   ".profile__edit-button"
 );
-export const profileEditModal = document.querySelector("#profile-edit-modal");
-export const closeEditButton = profileEditModal.querySelector(".modal__close");
+export const profileEditModalEl = document.querySelector("#profile-edit-modal");
+export const closeEditButton =
+  profileEditModalEl.querySelector(".modal__close");
 export const profileTitle = document.querySelector(".profile__title");
 export const profileDescription = document.querySelector(
   ".profile__description"
@@ -55,12 +57,13 @@ export const profileTitleInput = document.querySelector("#profile-title-input");
 export const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-export const profileEditForm = profileEditModal.querySelector(".modal__form");
+export const profileEditForm =
+  profileEditModalEl.querySelector("#edit-profile-form");
 
 export const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 export const cardListEl = document.querySelector(".cards__list");
-export const cardListSelector = document.querySelector(".cards__list");
+export const cardListSelector = ".cards__list";
 
 export const addCardForm = document.querySelector("#add-card-form");
 export const addNewCardButton = document.querySelector(".profile__add-button");

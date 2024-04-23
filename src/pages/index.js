@@ -6,19 +6,20 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import "../pages/index.css";
-import { profileEditForm } from "../utils/constants.js";
-import { profileEditModal } from "../utils/constants.js";
+import { profileEditModalEl } from "../utils/constants.js";
 import avatarImage from "../images/jacques-cousteau.jpg";
 const avatarImageEl = document.querySelector(".profile__image");
 avatarImageEl.src = avatarImage;
 console.log("test");
 
-const newCardPopup = new PopupWithForm();
+const newCardPopup = new PopupWithForm(constants.selectors.addModal, () =>
+  console.log("clicked")
+);
 newCardPopup.open();
 
 newCardPopup.close();
 
-const cardPreview = new PopupWithImage("#modal-image-preview");
+const cardPreview = new PopupWithImage("#preview-image-modal");
 cardPreview.setEventListeners();
 
 function handleImageClick(name, link) {
@@ -41,7 +42,7 @@ const profileEditModal = new PopupWithForm("#profile-edit-modal", (data) => {
     description: data.description,
   });
 });
-profileEditForm.setEventListeners();
+profileEditModal.setEventListeners();
 constants.profileEditButton.addEventListener("click", () => {
   editProfileFormValidator.resetValidation();
   const userData = userInformation.getUserInfo();
@@ -54,7 +55,7 @@ constants.profileEditButton.addEventListener("click", () => {
 const profileAddCardModal = new PopupWithForm("#profile-add-modal", (data) => {
   cardSection.addItem(createCard(data));
 });
-addCardForm.setEventListeners();
+profileAddCardModal.setEventListeners();
 constants.addNewCardButton.addEventListener("click", () => {
   addCardForm.open();
   addCardFormValidator.resetValidation();
@@ -74,7 +75,7 @@ cardSection.renderItems(constants.initialCards);
 
 const editProfileFormValidator = new FormValidator(
   constants.settings,
-  constants.profileEditModal
+  constants.profileEditForm
 );
 const addCardFormValidator = new FormValidator(
   constants.settings,
