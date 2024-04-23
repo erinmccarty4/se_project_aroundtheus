@@ -60,17 +60,17 @@ export const profileEditForm = profileEditModal.querySelector(".modal__form");
 export const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 export const cardListEl = document.querySelector(".cards__list");
-export const addCardForm = document.querySelector("#add-card-form");
+export const cardListSelector = document.querySelector(".cards__list");
 
+export const addCardForm = document.querySelector("#add-card-form");
 export const addNewCardButton = document.querySelector(".profile__add-button");
 export const profileAddCardModal = document.querySelector("#profile-add-modal");
 export const addCardModalCloseButton = profileAddCardModal.querySelector(
   "#add-card-modal-close-button"
 );
+
 export const cardTitleForm = document.querySelector("#add-card-title-input");
 export const cardLinkForm = document.querySelector("#add-card-url-input");
-
-export const cardsWrap = document.querySelector(".cards__list");
 
 export const previewImageModal = document.querySelector("#preview-image-modal");
 export const previewModalClose = previewImageModal.querySelector(

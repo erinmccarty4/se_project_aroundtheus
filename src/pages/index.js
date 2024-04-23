@@ -6,6 +6,17 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import "../pages/index.css";
+import { profileEditForm } from "../utils/constants.js";
+import { profileEditModal } from "../utils/constants.js";
+import avatarImage from "../images/jacques-cousteau.jpg";
+const avatarImageEl = document.querySelector(".profile__image");
+avatarImageEl.src = avatarImage;
+console.log("test");
+
+const newCardPopup = new PopupWithForm();
+newCardPopup.open();
+
+newCardPopup.close();
 
 const cardPreview = new PopupWithImage("#modal-image-preview");
 cardPreview.setEventListeners();
@@ -20,32 +31,32 @@ function createCard(cardData) {
 }
 
 const userInformation = new UserInfo({
-  name: "#profile-title",
-  description: "#profile-description",
+  name: "#profile-title-input",
+  description: "#profile-description-input",
 });
 
-const editModalForm = new PopupWithForm("#profile-edt-modal", (data) => {
+const profileEditModal = new PopupWithForm("#profile-edit-modal", (data) => {
   userInformation.setUserInfo({
     name: data.title,
     description: data.description,
   });
 });
-editModalForm.setEventListeners();
-constants.profileEdtBtn.addEventListener("click", () => {
-  editCardFormValidator.resetValidation();
+profileEditForm.setEventListeners();
+constants.profileEditButton.addEventListener("click", () => {
+  editProfileFormValidator.resetValidation();
   const userData = userInformation.getUserInfo();
-  constants.profileModalInput.value = userData.name;
-  constants.profileModalInputDescription.value = userData.description.trim();
+  constants.profileTitleInput.value = userData.name;
+  constants.profileDescriptionInput.value = userData.description.trim();
 
-  editModalForm.open();
+  profileEditForm.open();
 });
 
-const modalAddForm = new PopupWithForm("#profile-add-modal", (data) => {
+const profileAddCardModal = new PopupWithForm("#profile-add-modal", (data) => {
   cardSection.addItem(createCard(data));
 });
-modalAddForm.setEventListeners();
-constants.profileAddButton.addEventListener("click", () => {
-  modalAddForm.open();
+addCardForm.setEventListeners();
+constants.addNewCardButton.addEventListener("click", () => {
+  addCardForm.open();
   addCardFormValidator.resetValidation();
 });
 
@@ -61,14 +72,14 @@ const cardSection = new Section(
 
 cardSection.renderItems(constants.initialCards);
 
-const editCardFormValidator = new FormValidator(
+const editProfileFormValidator = new FormValidator(
   constants.settings,
-  constants.profileModalForm
+  constants.profileEditModal
 );
 const addCardFormValidator = new FormValidator(
   constants.settings,
-  constants.addProfileModalForm
+  constants.profileAddCardModal
 );
 
+editProfileFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
-editCardFormValidator.enableValidation();
