@@ -49,7 +49,7 @@ constants.profileEditButton.addEventListener("click", () => {
   constants.profileTitleInput.value = userData.name;
   constants.profileDescriptionInput.value = userData.description.trim();
 
-  profileEditForm.open();
+  profileEditModal.open();
 });
 
 const profileAddCardModal = new PopupWithForm("#profile-add-modal", (data) => {
@@ -57,7 +57,7 @@ const profileAddCardModal = new PopupWithForm("#profile-add-modal", (data) => {
 });
 profileAddCardModal.setEventListeners();
 constants.addNewCardButton.addEventListener("click", () => {
-  addCardForm.open();
+  profileAddCardModal.open();
   addCardFormValidator.resetValidation();
 });
 
