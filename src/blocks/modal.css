@@ -30,6 +30,14 @@
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
 }
 
+.modal__container-preview {
+  background-color: transparent;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
+
 .modal__close {
   background-image: url(../images/close-icon.svg);
   border: none;
@@ -53,13 +61,13 @@
 }
 
 .modal__heading {
-  color: black; 
+  color: black;
   font-size: 24px;
-  line-height: normal; 
+  line-height: normal;
   font-weight: 900;
   max-width: 300px;
   margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .modal__form {
@@ -107,6 +115,8 @@
   background-color: transparent;
   margin: auto;
   color: #fff;
+  max-width: 75vw;
+  max-height: 75vh;
 }
 
 .modal__preview-close {
