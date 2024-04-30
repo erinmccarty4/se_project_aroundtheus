@@ -10,7 +10,7 @@ import { profileEditModalEl } from "../utils/constants.js";
 import avatarImage from "../images/jacques-cousteau.jpg";
 const avatarImageEl = document.querySelector(".profile__image");
 avatarImageEl.src = avatarImage;
-console.log("test");
+// console.log("test");
 
 const newCardPopup = new PopupWithForm(constants.selectors.addModal, () =>
   console.log("clicked")
@@ -32,32 +32,33 @@ function createCard(cardData) {
 }
 
 const userInformation = new UserInfo({
-  name: "#profile-title-input",
-  description: "#profile-description-input",
+  name: ".profile__title",
+  description: ".profile__description",
 });
 
-const profileEditModal = new PopupWithForm("#profile-edit-modal", (data) => {
+const profileEditForm = new PopupWithForm("#profile-edit-modal", (data) => {
+  console.log("Form data", data);
   userInformation.setUserInfo({
-    name: data.title,
+    title: data.title,
     description: data.description,
   });
 });
-profileEditModal.setEventListeners();
+profileEditForm.setEventListeners();
 constants.profileEditButton.addEventListener("click", () => {
   editProfileFormValidator.resetValidation();
   const userData = userInformation.getUserInfo();
-  constants.profileTitleInput.value = userData.name;
+  constants.profileTitleInput.value = userData.title;
   constants.profileDescriptionInput.value = userData.description.trim();
 
-  profileEditModal.open();
+  profileEditForm.open();
 });
 
-const profileAddCardModal = new PopupWithForm("#profile-add-modal", (data) => {
+const addCardForm = new PopupWithForm("#profile-add-modal", (data) => {
   cardSection.addItem(createCard(data));
 });
-profileAddCardModal.setEventListeners();
+addCardForm.setEventListeners();
 constants.addNewCardButton.addEventListener("click", () => {
-  profileAddCardModal.open();
+  addCardForm.open();
   addCardFormValidator.resetValidation();
 });
 

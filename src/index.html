@@ -48,11 +48,11 @@
       <p class="modal__heading">Edit profile</p>
       <form class="modal__form" id="edit-profile-form">
         <label class="modal__label">
-        <input type="text" placeholder="Name" class="modal__input" id="profile-title-input" minlength="2"
+        <input type="text" name="title" placeholder="Name" class="modal__input" id="profile-title-input" minlength="2"
         maxlength="40" required/>
         <span class="modal__error" id="profile-title-input-error"></span>
       </label>
-        <input type="text" placeholder="Description" class="modal__input" id="profile-description-input"  minlength="2"
+        <input type="text" name="description" placeholder="Description" class="modal__input" id="profile-description-input"  minlength="2"
         maxlength="200"
         required/>
       <span class="modal__error" id="profile-description-input-error"></span>
@@ -71,13 +71,13 @@
       <p class="modal__heading">New Place</p>
       <form class="modal__form" id="add-card-form">
         <label class="modal__label">
-        <input type="text" placeholder="Title" class="modal__input" id="add-card-title-input"  minlength="1"
+        <input type="text" name="name" placeholder="Title" class="modal__input" id="add-card-title-input"  minlength="1"
         maxlength="30"
         required
       />  <span class="modal__error" id="add-card-title-input-error"></span>
     </label>
     <label class="modal__label">
-        <input type="url" placeholder="Image URL" class="modal__input" id="add-card-url-input" required/>
+        <input type="url" name="link" placeholder="Image URL" class="modal__input" id="add-card-url-input" required/>
         <span class="modal__error" id="add-card-url-input-error"></span>
       </label>
         <button type="submit" class="modal__button" id="add-card-button">Save</button>
@@ -106,6 +106,5 @@
           </div>
         </li>
   </template>
-
   </body>
 </html>
