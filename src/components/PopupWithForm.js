@@ -7,9 +7,8 @@ export default class PopupWithForm extends Popup {
     this._handleFormSubmit = handleFormSubmit;
   }
 
-  close() {
-    super.close();
-    // this._popupForm.reset();
+  open() {
+    super.open();
   }
 
   _getInputValues() {
@@ -29,5 +28,6 @@ export default class PopupWithForm extends Popup {
       this.close();
     });
     super.setEventListeners();
+    this._popupForm.reset();
   }
 }
