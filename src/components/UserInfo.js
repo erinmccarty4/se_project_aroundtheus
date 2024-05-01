@@ -1,5 +1,5 @@
 import { popupSelector } from "../utils/constants.js";
-import Popup from "./Popup.js";
+
 export default class UserInfo {
   constructor({ name, description }) {
     this._title = document.querySelector(name);

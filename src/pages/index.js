@@ -12,12 +12,12 @@ const avatarImageEl = document.querySelector(".profile__image");
 avatarImageEl.src = avatarImage;
 // console.log("test");
 
-const newCardPopup = new PopupWithForm(constants.selectors.addModal, () =>
-  console.log("clicked")
-);
-newCardPopup.open();
+// const newCardPopup = new PopupWithForm(constants.selectors.addModal, () =>
+//   console.log("clicked")
+// );
+// newCardPopup.open();
 
-newCardPopup.close();
+// newCardPopup.close();
 
 const cardPreview = new PopupWithImage("#preview-image-modal");
 cardPreview.setEventListeners();
