@@ -1,3 +1,5 @@
+//Imports
+
 import "./index.css";
 import Api from "../components/Api.js";
 import Card from "../components/Card.js";
@@ -10,18 +12,16 @@ import Section from "../components/Section.js";
 import {
   selectors,
   config,
-  profileEditForm,
+  profileForm,
+  cardForm,
   profileEditButton,
   addNewCardButton,
   profileTitleInput,
   profileDescriptionInput,
+  //deleteCardForm,
   avatarUpdateForm,
   avatarImage,
-  addCardForm,
-  deleteCardForm,
 } from "../utils/constants.js";
-
-// console.log("test");
 
 /*Functions*/
 
@@ -33,9 +33,8 @@ function openPreviewModal(data) {
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
-  // baseUrl: "https://around-api.en.tripleten-services.com/v1/users/create"
   headers: {
-    authorization: "96a4108d-13b8-47da-8399-7921de6eda41",
+    authorization: "d5d1d874-a161-48bd-b3b4-ae8e38400ed9",
     "Content-Type": "application/json",
   },
 });
@@ -75,29 +74,28 @@ function renderCard(cardData) {
   cardSection.addItem(card);
 }
 
-// const userInfo = new UserInfo(
-//   ".profile__title",
-//   ".profile__description",
-//   ".profile__avatar"
-// );
-// const profileEditForm = new PopupWithForm(
-//   "#profile-edit-modal",
-//   handleProfileEditSubmit
-// );
-// const cardEditForm = new PopupWithForm("#add-card-modal", handleCardFormSubmit);
-// const previewImagePopup = new PopupWithImage("#modal__preview-card");
-// const confirmDeletePopup = new PopupWithConfirm("#delete-card-modal");
+const userInfo = new UserInfo(
+  ".profile__title",
+  ".profile__description",
+  ".profile__avatar"
+);
+const profileEditForm = new PopupWithForm(
+  "#profile-edit-modal",
+  handleProfileEditSubmit
+);
+const cardEditForm = new PopupWithForm("#add-card-modal", handleCardFormSubmit);
+const previewImagePopup = new PopupWithImage("#modal__preview-card");
+const confirmDeletePopup = new PopupWithConfirm("#delete-card-modal");
 
-// const avatarImagePopup = new PopupWithForm(
-//   "#edit-avatar-modal",
-//   handleAvatarFormSubmit
-// );
+const avatarImagePopup = new PopupWithForm(
+  "#edit-avatar-modal",
+  handleAvatarFormSubmit
+);
 
 /*Validation*/
 
-const editFormValidator = new FormValidator(config, profileEditForm);
-const addCardValidator = new FormValidator(config, addCardForm);
-const deleteCardValidator = new FormValidator(config, deleteCardForm);
+const editFormValidator = new FormValidator(config, profileForm);
+const addCardValidator = new FormValidator(config, cardForm);
 const avatarValidator = new FormValidator(config, avatarUpdateForm);
 
 /*Event Handlers*/
@@ -118,7 +116,6 @@ function handleProfileEditSubmit(inputItems) {
       profileEditForm.renderLoading(false);
     });
 }
-
 function handleCardFormSubmit(data) {
   cardEditForm.renderLoading(true);
   api
@@ -222,8 +219,7 @@ confirmDeletePopup.setEventListeners();
 avatarImagePopup.setEventListeners();
 
 //Initialization
-cardSection.renderItems(initialCards);
-addCardValidator.enableValidation();
+
 editFormValidator.enableValidation();
+addCardValidator.enableValidation();
 avatarValidator.enableValidation();
-// deleteCardValidator.enableValidation();
