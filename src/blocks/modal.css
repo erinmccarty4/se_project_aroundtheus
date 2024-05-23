@@ -164,10 +164,28 @@
   visibility: visible;
 }
 
-.modal__button_disabled {
-  opacity: 20%;
-  background-color: #f6f6f6;
-  color: #000;
+.modal__delete_button {
+  position: relative;
+  width: 358px;
+  height: 50px;
+  background: #000;
+  color: #ffffff;
+  font-family: Inter, Arial, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 21.78px;
+  margin-top: unset;
+  margin-bottom: 0;
+}
+
+.modal__delete_button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.modal__delete_button_heading {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 568px) {
