@@ -71,8 +71,8 @@ export const config = {
 export const selectors = {
   cardSection: ".card__list",
   cardTemplate: "#card-template",
-  popupForm: "modal__form",
+  popupForm: ".modal__form",
   previewModal: "#modal__preview-card",
-  previewImage: "modal__preview-image",
+  previewImage: ".modal__preview-image",
   addCardModal: "#add-card-modal",
 };
