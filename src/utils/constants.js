@@ -107,9 +107,9 @@ export const previewModalClose = previewImageModal.querySelector(
   "#preview-modal-close"
 );
 
-export const previewImageEl = document.querySelector(".card__preview-image");
+export const previewImageEl = document.querySelector(".modal__preview-image");
 export const previewNameEl = document.querySelector(".modal__preview-name");
 
-export const deleteButton = document.querySelector(".delete__button");
+export const deleteButton = document.querySelector(".modal__button-delete");
 
 export const deleteCard = document.querySelector("#modal-delete-card");
