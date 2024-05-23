@@ -63,7 +63,9 @@ api
   .catch((err) => {
     console.log(err);
   });
+
 function renderCard(cardData) {
+  console.log(Hello, world);
   const card = new Card(
     cardData,
     selectors.cardTemplate,

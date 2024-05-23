@@ -32,7 +32,7 @@ export const addNewCardButton = document.querySelector("#add-card-button");
 /*form elements*/
 
 export const profileForm = document.forms["edit-profile-form"];
-export const cardForm = document.forms["card-form"];
+export const cardForm = document.forms["add-card-form"];
 export const deleteCardForm = document.querySelector("#modal__delete-form");
 export const newName = document.querySelector("#profile-title-input");
 export const newJob = document.querySelector("#profile-description-input");
