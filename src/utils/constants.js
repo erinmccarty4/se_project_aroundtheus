@@ -1,5 +1,3 @@
-/*Elements*/
-
 /*profile elements*/
 
 export const profileEditButton = document.querySelector("#profile-edit-button");
@@ -23,17 +21,17 @@ export const avatarEditButton = document.querySelector(
 export const avatarEditModal = document.querySelector("#edit-avatar-modal");
 export const avatarCloseButton = avatarEditModal.querySelector(".modal__close");
 export const avatarLinkInput = document.querySelector("#avatar-link-input");
-export const avatarImage = document.querySelector(".profile__avatar");
+export const avatarImage = document.querySelector(".profile__image");
 
 /*addCard elements*/
 
 export const addCardModal = document.querySelector("#add-card-modal");
 export const addCardModalCloseButton = document.querySelector(".modal__close");
-export const addNewCardButton = document.querySelector("#image__add-button");
+export const addNewCardButton = document.querySelector("#add-card-button");
 
 /*form elements*/
 
-export const profileForm = document.forms["profile-form"];
+export const profileForm = document.forms["edit-profile-form"];
 export const cardForm = document.forms["card-form"];
 export const deleteCardForm = document.querySelector("#modal__delete-form");
 export const newName = document.querySelector("#profile-title-input");
@@ -43,7 +41,7 @@ export const avatarUpdateForm = document.querySelector("#avatar-form");
 
 /*card elements*/
 
-export const cardListEl = document.querySelector(".cards__gallery");
+export const cardListEl = document.querySelector(".card__list");
 export const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 export const cardTitleInput = document.querySelector("#image-title-input");
