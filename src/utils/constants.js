@@ -1,6 +1,34 @@
+export const initialCards = [
+  {
+    name: "Yosemite Valley",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+  },
+  {
+    name: "Lake Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
+  },
+  {
+    name: "Bald Mountains",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
+  },
+  {
+    name: "Vanoise National Park",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
+  },
+];
 /*profile elements*/
 
-export const profileEditButton = document.querySelector("#profile-edit-button");
+export const profileEditButton = document.querySelector(
+  ".profile__edit-button"
+);
 export const profileEditModal = document.querySelector("#profile-edit-modal");
 export const profileCloseButton =
   profileEditModal.querySelector(".modal__close");
@@ -19,7 +47,7 @@ export const avatarEditButton = document.querySelector(
   ".profile__avatar-button"
 );
 export const avatarEditModal = document.querySelector("#edit-avatar-modal");
-export const avatarCloseButton = avatarEditModal.querySelector(".modal__close");
+export const avatarCloseButton = document.querySelector(".modal__close");
 export const avatarLinkInput = document.querySelector("#avatar-link-input");
 export const avatarImage = document.querySelector(".profile__image");
 

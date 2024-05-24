@@ -22,6 +22,17 @@ import {
   avatarUpdateForm,
   avatarImage,
 } from "../utils/constants.js";
+// import avatarImage from "../images/jacques-cousteau.jpg";
+// const avatarImageEl = document.querySelector(".profile__image");
+// avatarImageEl.src = avatarImage;
+// console.log("test");
+
+// const newCardPopup = new PopupWithForm(constants.selectors.addModal, () =>
+//   console.log("clicked")
+// );
+// newCardPopup.open();
+
+// newCardPopup.close();
 
 /*Functions*/
 
@@ -47,16 +58,14 @@ api
     userInfo.setUserInfo(res);
     userInfo.setUserAvatar(res);
   })
-  .catch((err) => {
-    console.log(err);
-  });
+  .catch((err) => {});
 
 api
   .getInitialCards()
   .then((res) => {
     cardSection = new Section(
       { items: res, renderer: renderCard },
-      ".card__list"
+      ".cards__list"
     );
     cardSection.renderItems();
   })
@@ -65,7 +74,6 @@ api
   });
 
 function renderCard(cardData) {
-  console.log(Hello, world);
   const card = new Card(
     cardData,
     selectors.cardTemplate,
@@ -76,11 +84,12 @@ function renderCard(cardData) {
   cardSection.addItem(card);
 }
 
-const userInfo = new UserInfo(
-  ".profile__title",
-  ".profile__description",
-  ".profile__avatar"
-);
+const userInfo = new UserInfo({
+  name: ".profile__title",
+  description: ".profile__description",
+  userAvatarSelector: ".profile__image",
+});
+
 const profileEditForm = new PopupWithForm(
   "#profile-edit-modal",
   handleProfileEditSubmit
@@ -105,7 +114,7 @@ const avatarValidator = new FormValidator(config, avatarUpdateForm);
 function handleProfileEditSubmit(inputItems) {
   profileEditForm.renderLoading(true);
   api
-    .userProfileInfo(inputItems.name, inputItems.description)
+    .userProfileInfo(inputItems.name, inputItems.about)
     .then((res) => {
       console.log(res);
       userInfo.setUserInfo(res);
