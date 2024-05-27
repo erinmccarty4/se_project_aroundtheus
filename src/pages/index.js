@@ -219,13 +219,13 @@ profileEditButton.addEventListener("click", () => {
 addNewCardButton.addEventListener("click", () => {
   cardEditForm.open();
 });
-const addCardForm = new PopupWithForm("#profile-add-modal", (data) => {
+const addCardForm = new PopupWithForm("#add-card-modal", (data) => {
   cardSection.addItem(createCard(data));
 });
 addCardForm.setEventListeners();
-constants.addNewCardButton.addEventListener("click", () => {
+addNewCardButton.addEventListener("click", () => {
   addCardForm.open();
-  addCardFormValidator.resetValidation();
+  addCardValidator.resetValidation();
 });
 
 avatarImage.addEventListener("click", () => {

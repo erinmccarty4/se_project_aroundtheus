@@ -95,7 +95,7 @@
 }
 
 .profile__avatar-button {
-  background: transparent url(../images/edit-button.svg) center no-repeat;
+  background: transparent url(../images/pen-edit.svg) center no-repeat;
   width: 26px;
   height: 26px;
   position: absolute;
