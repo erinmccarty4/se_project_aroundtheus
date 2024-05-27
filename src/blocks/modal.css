@@ -74,6 +74,14 @@
 .modal__form {
   display: flex;
   flex-direction: column;
+  max-width: 430px;
+  color: #000;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 30px;
 }
 
 .modal__input {
@@ -166,16 +174,10 @@
 }
 
 .modal__delete_button {
-  position: relative;
-  width: 358px;
-  height: 50px;
-  background: #000;
-  color: #ffffff;
-  font-family: Inter, Arial, Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 21.78px;
-  margin-top: unset;
-  margin-bottom: 0;
+  width: 100%;
+  min-height: 46px;
+  padding: 0;
+  margin: 0;
 }
 
 .modal__delete_button:hover {
@@ -184,9 +186,13 @@
 }
 
 .modal__delete_button_heading {
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 0;
+  color: #fff;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 @media screen and (max-width: 568px) {

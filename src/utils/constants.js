@@ -55,7 +55,7 @@ export const avatarImage = document.querySelector(".profile__image");
 
 export const addCardModal = document.querySelector("#add-card-modal");
 export const addCardModalCloseButton = document.querySelector(".modal__close");
-export const addNewCardButton = document.querySelector("#add-card-button");
+export const addNewCardButton = document.querySelector(".profile__add-button");
 
 /*form elements*/
 

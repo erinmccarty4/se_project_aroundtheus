@@ -21,13 +21,14 @@ import {
   //deleteCardForm,
   avatarUpdateForm,
   avatarImage,
+  addCardModal,
 } from "../utils/constants.js";
 // import avatarImage from "../images/jacques-cousteau.jpg";
 // const avatarImageEl = document.querySelector(".profile__image");
 // avatarImageEl.src = avatarImage;
 // console.log("test");
 
-// const newCardPopup = new PopupWithForm(constants.selectors.addModal, () =>
+// const newCardPopup = new PopupWithForm(addCardModal, () =>
 //   console.log("clicked")
 // );
 // newCardPopup.open();
@@ -217,6 +218,14 @@ profileEditButton.addEventListener("click", () => {
 
 addNewCardButton.addEventListener("click", () => {
   cardEditForm.open();
+});
+const addCardForm = new PopupWithForm("#profile-add-modal", (data) => {
+  cardSection.addItem(createCard(data));
+});
+addCardForm.setEventListeners();
+constants.addNewCardButton.addEventListener("click", () => {
+  addCardForm.open();
+  addCardFormValidator.resetValidation();
 });
 
 avatarImage.addEventListener("click", () => {
