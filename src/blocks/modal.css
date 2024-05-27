@@ -173,7 +173,7 @@
   visibility: visible;
 }
 
-.modal__delete_button {
+.modal-delete-button {
   position: relative;
   width: 358px;
   height: 50px;
@@ -186,12 +186,12 @@
   margin-bottom: 0;
 }
 
-.modal__delete_button:hover {
+.modal-delete-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.modal__delete_button_heading {
+.modal_delete-card-heading {
   position: relative;
   margin-top: 0;
   margin-bottom: 0;

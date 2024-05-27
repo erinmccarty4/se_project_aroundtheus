@@ -95,21 +95,21 @@
   </div>
 </div>
 
- <!--Delete Card Modal-->
- 
-  <div class="modal" id="delete-card-modal">
-      <div class="modal__container modal__delete-card">
-        <h3 class="modal__title">Are you sure?</h3>
-        <form class="modal__form" name="modal" id="delete-card-form">
-        Are you sure?
-      </h3>
-      <button class="modal__close" id="delete-close-button" type="button"></button>
-      <button class="modal__button modal__delete_button" id="modal-delete-button" type ="submit">Yes</button>
-    </form>
+   <!--Delete Card Modal-->
+   <div class="modal" id="delete-card-modal">
+    <div class="modal__container modal__delete_card">
+      <form class="modal__form" name= "delete-card-form" id= "modal__delete-form">
+        <h3 class="modal__heading modal_delete-card-heading">
+          Are you sure?
+        </h3>
+        <button class="modal__close" id="delete-close-button" type="button"></button>
+        <button class="modal__button modal__button_delete" id="modal-delete-button" type ="submit">Yes</button>
+      </form>
+    </div>
   </div>
-</div> 
 
- <!-- avatar modal-->
+
+   <!--update avatar modal-->
    <div class="modal" id="edit-avatar-modal">
     <div class="modal__container">
       <button
@@ -117,7 +117,7 @@
         id="avatar-close-button"
         type="button"
       ></button>
-      <form class="modal__form" name ="avatar__form" id ="avatar-form">
+      <form class="modal__form" name = "avatar__form" id ="avatar-form">
         <h3 class="modal__heading">Change Profile Picture</h3>
         <input
           type="url"
@@ -136,6 +136,7 @@
       </form>
     </div>
   </div>
+
 
   <template id="card-template">
     <li class="card">
