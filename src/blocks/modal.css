@@ -197,7 +197,7 @@
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 580px) {
   .modal__button {
     font-size: 14px;
     line-height: 17px;

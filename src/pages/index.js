@@ -95,7 +95,7 @@ const profileEditForm = new PopupWithForm(
   "#profile-edit-modal",
   handleProfileEditSubmit
 );
-const cardEditForm = new PopupWithForm("#add-card-modal", handleCardFormSubmit);
+const addCardPopup = new PopupWithForm("#add-card-modal", handleCardFormSubmit);
 const previewImagePopup = new PopupWithImage("#modal__preview-card");
 const confirmDeletePopup = new PopupWithConfirm("#delete-card-modal");
 
@@ -129,19 +129,19 @@ function handleProfileEditSubmit(inputItems) {
     });
 }
 function handleCardFormSubmit(data) {
-  cardEditForm.renderLoading(true);
+  addCardPopup.renderLoading(true);
   api
     .addNewCard(data.name, data.link)
     .then((res) => {
       renderCard(res);
-      cardEditForm.close();
+      addCardPopup.close();
       addCardValidator.resetValidation();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
-      cardEditForm.renderLoading(false);
+      addCardPopup.renderLoading(false);
     });
 }
 
@@ -217,15 +217,7 @@ profileEditButton.addEventListener("click", () => {
 });
 
 addNewCardButton.addEventListener("click", () => {
-  cardEditForm.open();
-});
-const addCardForm = new PopupWithForm("#add-card-modal", (data) => {
-  cardSection.addItem(createCard(data));
-});
-addCardForm.setEventListeners();
-addNewCardButton.addEventListener("click", () => {
-  addCardForm.open();
-  addCardValidator.resetValidation();
+  addCardPopup.open();
 });
 
 avatarImage.addEventListener("click", () => {
@@ -233,7 +225,7 @@ avatarImage.addEventListener("click", () => {
 });
 
 profileEditForm.setEventListeners();
-cardEditForm.setEventListeners();
+addCardPopup.setEventListeners();
 previewImagePopup.setEventListeners();
 confirmDeletePopup.setEventListeners();
 avatarImagePopup.setEventListeners();
