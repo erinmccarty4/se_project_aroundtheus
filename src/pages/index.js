@@ -88,7 +88,7 @@ function renderCard(cardData) {
 const userInfo = new UserInfo({
   name: ".profile__title",
   description: ".profile__description",
-  userAvatarSelector: ".profile__image",
+  userAvatarSelector: ".profile__avatar",
 });
 
 const profileEditForm = new PopupWithForm(

@@ -49,7 +49,7 @@ export const avatarEditButton = document.querySelector(
 export const avatarEditModal = document.querySelector("#edit-avatar-modal");
 export const avatarCloseButton = document.querySelector(".modal__close");
 export const avatarLinkInput = document.querySelector("#avatar-link-input");
-export const avatarImage = document.querySelector(".profile__avatar");
+export const avatarImage = document.querySelector(".profile__avatar-button");
 
 /*addCard elements*/
 
