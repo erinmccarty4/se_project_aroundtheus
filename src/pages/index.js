@@ -211,6 +211,7 @@ function handleAvatarFormSubmit(data) {
 
 profileEditButton.addEventListener("click", () => {
   profileEditForm.open();
+  editFormValidator.resetValidation();
   const userData = userInfo.getUserInfo();
   profileTitleInput.value = userData.title;
   profileDescriptionInput.value = userData.description;
@@ -218,6 +219,7 @@ profileEditButton.addEventListener("click", () => {
 
 addNewCardButton.addEventListener("click", () => {
   addCardPopup.open();
+  addCardValidator.resetValidation();
 });
 
 avatarImage.addEventListener("click", () => {
