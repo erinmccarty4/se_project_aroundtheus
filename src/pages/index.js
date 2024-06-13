@@ -212,7 +212,7 @@ function handleAvatarFormSubmit(data) {
 profileEditButton.addEventListener("click", () => {
   profileEditForm.open();
   const userData = userInfo.getUserInfo();
-  profileTitleInput.value = userData.name;
+  profileTitleInput.value = userData.title;
   profileDescriptionInput.value = userData.description;
 });
 

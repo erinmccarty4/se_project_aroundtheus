@@ -119,6 +119,11 @@
   cursor: pointer;
 }
 
+.modal__button_disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
 .modal__preview-image {
   position: relative;
   background-color: transparent;
