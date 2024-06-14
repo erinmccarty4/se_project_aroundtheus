@@ -219,7 +219,6 @@ profileEditButton.addEventListener("click", () => {
 
 addNewCardButton.addEventListener("click", () => {
   addCardPopup.open();
-  addCardValidator.resetValidation();
 });
 
 avatarImage.addEventListener("click", () => {
