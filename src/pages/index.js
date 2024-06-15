@@ -135,6 +135,7 @@ function handleCardFormSubmit(data) {
     .then((res) => {
       renderCard(res);
       addCardPopup.close();
+      cardForm.reset();
       addCardValidator.resetValidation();
     })
     .catch((err) => {
