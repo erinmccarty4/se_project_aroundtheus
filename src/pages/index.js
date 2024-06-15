@@ -136,7 +136,8 @@ function handleCardFormSubmit(data) {
       renderCard(res);
       addCardPopup.close();
       cardForm.reset();
-      addCardValidator.resetValidation();
+      addCardValidator.disableButton();
+      // addCardValidator.resetValidation();
     })
     .catch((err) => {
       console.log(err);
