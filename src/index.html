@@ -14,25 +14,35 @@
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
-        <img src="<%=require('./images/logo.svg')%>" alt="logo" class="header__logo" />
+        <img
+          src="<%=require('./images/logo.svg')%>"
+          alt="logo"
+          class="header__logo"
+        />
       </header>
       <main class="content">
-        <section class="profile">
-          <img
-            src="<%=require('./images/jacques-cousteau.jpg')%>"
-            alt="Avatar"
-            class="profile__image"/>
-          <div class="profile__info">
-            <h1 class="profile__title">Jacques Cousteau</h1>
-            <button type="button" class="profile__edit-button" aria-label="edit"></button>
-            <p class="profile__description">Explorer</p>
+        <section class="profile page__section">
+          <div class="profile__avatar-container">
+            <img src="" alt="Avatar" class="profile__avatar" />
+            <button class="profile__avatar-button"></button>
           </div>
-          <button type="button" class="profile__add-button" aria-label="Create card"></button>
+          <div class="profile__info">
+            <h1 class="profile__title"></h1>
+            <button
+              type="button"
+              class="profile__edit-button"
+              aria-label="edit"
+            ></button>
+            <p class="profile__description"></p>
+          </div>
+          <button
+            type="button"
+            class="profile__add-button"
+            aria-label="Create card"
+          ></button>
         </section>
         <section class="cards page__section">
-          <ul class="cards__list">
-            
-          </ul>
+          <ul class="cards__list"></ul>
         </section>
       </main>
       <footer class="footer page__section">
@@ -40,71 +50,166 @@
       </footer>
     </div>
 
-
-  <!-- Edit Modal -->
-  <div class="modal" id="profile-edit-modal">
-    <div class="modal__container">
-      <button type="button" class="modal__close" id="modal-close-button"></button>
-      <p class="modal__heading">Edit profile</p>
-      <form class="modal__form" id="edit-profile-form">
-        <label class="modal__label">
-        <input type="text" name="title" placeholder="Name" class="modal__input" id="profile-title-input" minlength="2"
-        maxlength="40" required/>
-        <span class="modal__error" id="profile-title-input-error"></span>
-      </label>
-        <input type="text" name="description" placeholder="Description" class="modal__input" id="profile-description-input"  minlength="2"
-        maxlength="200"
-        required/>
-      <span class="modal__error" id="profile-description-input-error"></span>
-      </label>
-        <button type="submit" class="modal__button" id="profile-edit-button">Save</button>
-      </form>
+    <!-- Edit Modal -->
+    <div class="modal" id="profile-edit-modal">
+      <div class="modal__container">
+        <button
+          type="button"
+          class="modal__close"
+          id="modal-close-button"
+        ></button>
+        <p class="modal__heading">Edit profile</p>
+        <form class="modal__form" id="edit-profile-form">
+          <label class="modal__label">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              class="modal__input"
+              id="profile-title-input"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="modal__error" id="profile-title-input-error"></span>
+          </label>
+          <label>
+            <input
+              type="text"
+              name="about"
+              placeholder="Description"
+              class="modal__input"
+              id="profile-description-input"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span
+              class="modal__error"
+              id="profile-description-input-error"
+            ></span>
+          </label>
+          <button type="submit" class="modal__button" id="profile-edit-button">
+            Save
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-  
 
-
-  <!-- Add Card Modal -->
-   <div class="modal" id="profile-add-modal">
-    <div class="modal__container">
-      <button type="button" class="modal__close" id="add-card-modal-close-button"></button>
-      <p class="modal__heading">New Place</p>
-      <form class="modal__form" id="add-card-form">
-        <label class="modal__label">
-        <input type="text" name="name" placeholder="Title" class="modal__input" id="add-card-title-input"  minlength="1"
-        maxlength="30"
-        required
-      />  <span class="modal__error" id="add-card-title-input-error"></span>
-    </label>
-    <label class="modal__label">
-        <input type="url" name="link" placeholder="Image URL" class="modal__input" id="add-card-url-input" required/>
-        <span class="modal__error" id="add-card-url-input-error"></span>
-      </label>
-        <button type="submit" class="modal__button" id="add-card-button">Save</button>
-       
-      </form>
+    <!-- Add Card Modal -->
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button
+          type="button"
+          class="modal__close"
+          id="add-card-modal-close-button"
+        ></button>
+        <p class="modal__heading">New Place</p>
+        <form class="modal__form" id="add-card-form">
+          <label class="modal__label">
+            <input
+              type="text"
+              name="name"
+              placeholder="Title"
+              class="modal__input"
+              id="add-card-title-input"
+              minlength="1"
+              maxlength="30"
+              required
+            />
+            <span class="modal__error" id="add-card-title-input-error"></span>
+          </label>
+          <label class="modal__label">
+            <input
+              type="url"
+              name="link"
+              placeholder="Image URL"
+              class="modal__input"
+              id="add-card-url-input"
+              required
+            />
+            <span class="modal__error" id="add-card-url-input-error"></span>
+          </label>
+          <button type="submit" class="modal__button" id="add-card-button">
+            Save
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-        
-<!-- Preview Image Modal-->
-<div class="modal" id="preview-image-modal">
-  <div class="modal__container-preview">
-    <button class="modal__close" id="preview-modal-close"></button>
-    <img src="" alt="" class="modal__preview-image" id="modal-image" />
-    <p class="modal__preview-name"></p>
-  </div>
-</div>
 
+    <!-- Preview Image Modal-->
+    <div class="modal" id="modal__preview-card">
+      <div class="modal__container-preview">
+        <button class="modal__close" id="preview-modal-close"></button>
+        <img src="" alt="" class="modal__preview-image" id="modal-image" />
+        <p class="modal__preview-name"></p>
+      </div>
+    </div>
 
-  <template id="card-template">
-    <li class="card">
-          <img class="card__image" src="" alt=""  />
-          <div class="card__description">
-            <h2 class="card__title"></h2>
-            <button type="button" class="card__like-button"></button>
-            <button type="button" class="card__delete-button"></button>
-          </div>
-        </li>
-  </template>
+    <!--Delete Card Modal-->
+    <div class="modal" id="delete-card-modal">
+      <div class="modal__container modal__delete_card">
+        <form
+          class="modal__form"
+          name="delete-card-form"
+          id="modal__delete-form"
+        >
+          <h3 class="modal__heading modal_delete-card-heading">
+            Are you sure?
+          </h3>
+          <button
+            class="modal__close"
+            id="delete-close-button"
+            type="button"
+          ></button>
+          <button
+            class="modal__button modal__button_delete"
+            id="modal-delete-button"
+            type="submit"
+          >
+            Yes
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!--update avatar modal-->
+    <div class="modal" id="edit-avatar-modal">
+      <div class="modal__container">
+        <button
+          class="modal__close"
+          id="avatar-close-button"
+          type="button"
+        ></button>
+        <form class="modal__form" name="avatar__form" id="avatar-form">
+          <h3 class="modal__heading">Change Profile Picture</h3>
+          <input
+            type="url"
+            name="link"
+            class="modal__input modal__input_type_text avatar__modal_url"
+            id="avatar-link-input"
+            placeholder="Image Link"
+            required
+            minlength="2"
+            maxlength="200"
+          />
+          <span class="modal__error" id="avatar-link-input-error"></span>
+          <button class="modal__button modal__button_disabled" disabled>
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <template id="card-template">
+      <li class="card">
+        <img class="card__image" src="" alt="" />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button"></button>
+          <button type="button" class="card__delete-button"></button>
+        </div>
+      </li>
+    </template>
   </body>
 </html>

@@ -61,6 +61,7 @@
   height: 18px;
   border: none;
   transition: opacity 0.2s linear;
+  color: black;
 }
 .card__like-button:hover {
   opacity: 0.5;
@@ -69,7 +70,7 @@
 
 .card__like-button_active {
   background-image: url(../images/like-button-active.svg);
-} 
+}
 
 .card__delete-button {
   background: transparent url(../images/delete-button.svg) center no-repeat;
